@@ -1,4 +1,5 @@
 using ICities;
+using AllHelpers;
 
 namespace TreeEditor
 {
@@ -11,14 +12,16 @@ namespace TreeEditor
 
         public void OnLevelLoaded(LoadMode mode)
         {
-            // Replace all road trees with California Palm
-            AllHelpers.CityHelper cityHelper = new AllHelpers.CityHelper();
+            // Simply displays city name in context panel
+            CityHelper cityHelper = new CityHelper();
             cityHelper.DisplayCityName();
 
-            AllHelpers.BuildingHelper buildingHelper = new AllHelpers.BuildingHelper();
+            // Removes billboards and neon signs
+            BuildingHelper buildingHelper = new BuildingHelper();
             buildingHelper.RemoveBuildingProps();
 
-            AllHelpers.TreeHelper treeHelper = new AllHelpers.TreeHelper();
+            // Replace all road trees with California Palm
+            TreeHelper treeHelper = new TreeHelper();
             treeHelper.DefaultAllRoadTrees("");
         }
 
